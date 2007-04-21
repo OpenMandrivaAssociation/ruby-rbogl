@@ -1,6 +1,6 @@
 %define name ruby-rbogl
 %define version 0.32g
-%define release %mkrel 3
+%define release %mkrel 4
 
 Summary: Ruby extension library to use OpenGL
 Name: %{name}
@@ -13,9 +13,6 @@ Group: Development/Other
 BuildRoot: %{_tmppath}/%{name}-buildroot
 Requires: ruby >= 1.8
 BuildRequires: ruby-devel libx11-devel mesaglu-devel mesaglut-devel
-
-%{expand:%%define ruby_libdir %(ruby -rrbconfig -e "puts Config::CONFIG['sitelibdir']")}
-%{expand:%%define ruby_archdir %(ruby -rrbconfig -e "puts Config::CONFIG['sitearchdir']")}
 
 %description
 Ruby extension library to use OpenGL.
@@ -39,7 +36,7 @@ rm -rf %buildroot
 
 %files
 %defattr(-,root,root)
-%{ruby_archdir}/*.so
+%{ruby_sitearchdir}/*.so
 %doc README.EUC ChangeLog sample 
 
 
