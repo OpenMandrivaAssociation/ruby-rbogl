@@ -10,6 +10,7 @@ URL: http://www2.giganet.net/~yoshi/
 Source0: rbogl-%{version}.tar.bz2
 License: GPL
 Group: Development/Ruby
+BuildRoot: %{_tmppath}/%{name}-buildroot
 Requires: ruby >= 1.8
 BuildRequires: ruby-devel libx11-devel mesaglu-devel mesaglut-devel
 
