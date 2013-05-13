@@ -13,7 +13,7 @@ License: GPL
 Group: Development/Ruby
 Requires: ruby >= 1.8
 BuildRequires: ruby-devel
-BuildRequires: libx11-devel
+BuildRequires: pkgconfig(x11)
 BuildRequires: mesa-common-devel
 
 %description
