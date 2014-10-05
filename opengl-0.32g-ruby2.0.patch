@@ -1,0 +1,24 @@
+--- opengl-0.32g/glut.c.orig	2014-10-05 21:43:14.896099387 +0100
++++ opengl-0.32g/glut.c	2014-10-05 21:46:06.566086739 +0100
+@@ -65,9 +65,10 @@
+     Check_Type(arg1, T_ARRAY);
+     largc = RARRAY_LEN(arg1)+1;
+     largv = ALLOCA_N(char*, largc+2);
+-    largv[0] = STR2CSTR(rb_eval_string("$0"));
++    VALUE value = rb_eval_string("$0");
++    largv[0] = StringValuePtr(value);
+     for (i = 1; i < largc; i++) {
+-        largv[i] = STR2CSTR(RARRAY_PTR(arg1)[i-1]);
++        largv[i] = StringValuePtr(RARRAY_PTR(arg1)[i-1]);
+     }
+     largv[i] = NULL;
+     glutInit(&largc, largv);
+@@ -77,7 +78,7 @@
+         ptr = RARRAY_PTR(arg1)[i];
+         find = 0;
+         for (j = 1; largv[j]; j++) {
+-            if (STR2CSTR(ptr) == largv[j]) {
++            if (StringValuePtr(ptr) == largv[j]) {
+                 rb_ary_push(new_argv, ptr);
+                 find = 1;
+                 break;

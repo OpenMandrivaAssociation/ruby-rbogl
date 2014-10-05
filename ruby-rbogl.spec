@@ -1,6 +1,6 @@
 %define name ruby-rbogl
 %define version 0.32g
-%define release  19
+%define release  20
 
 Summary: Ruby extension library to use OpenGL
 Name: %{name}
@@ -9,6 +9,7 @@ Release: %{release}
 URL: http://www2.giganet.net/~yoshi/
 Source0: rbogl-%{version}.tar.bz2
 Patch0:  opengl-0.32g-RString.patch
+Patch1:	opengl-0.32g-ruby2.0.patch
 License: GPL
 Group: Development/Ruby
 Requires: ruby >= 1.8
@@ -21,7 +22,7 @@ Ruby extension library to use OpenGL.
 
 %prep
 %setup -q -n opengl-%{version}
-%patch0 -p1
+%apply_patches
 
 %build
 ruby extconf.rb --with-x11-lib=/usr/%{_lib}/X11
