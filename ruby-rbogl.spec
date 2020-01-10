@@ -22,7 +22,7 @@ Ruby extension library to use OpenGL.
 
 %prep
 %setup -q -n opengl-%{version}
-%apply_patches
+%autopatch -p1
 
 %build
 ruby extconf.rb --with-x11-lib=/usr/%{_lib}/X11
