@@ -1,6 +1,6 @@
 %define name ruby-rbogl
 %define version 0.32g
-%define release  24
+%define release  25
 
 Summary: Ruby extension library to use OpenGL
 Name: %{name}
