@@ -6,7 +6,7 @@ Summary: Ruby extension library to use OpenGL
 Name: %{name}
 Version: %{version}
 Release: %{release}
-URL: http://www2.giganet.net/~yoshi/
+URL: https://www2.giganet.net/~yoshi/
 Source0: rbogl-%{version}.tar.bz2
 Patch0:  opengl-0.32g-RString.patch
 Patch1:	opengl-0.32g-ruby2.0.patch
