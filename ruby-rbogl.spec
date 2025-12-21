@@ -13,6 +13,7 @@ Patch1:	opengl-0.32g-ruby2.0.patch
 License: GPL
 Group: Development/Ruby
 Requires: ruby >= 1.8
+BuildRequires:	make
 BuildRequires: ruby-devel
 BuildRequires: pkgconfig(x11)
 BuildRequires: mesa-common-devel
